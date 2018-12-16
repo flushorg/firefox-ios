@@ -4,33 +4,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 "use strict";
-/*
- var noImageCSS = "*{background-image:none !important;}img,iframe{visibility:hidden !important;}body{background-color:#000044;} #divSupported{position:fixed;top:0px;width:100%;background-color:#000;color:#fff;text-align:center;size:25px;height:90px;z-index:9999999999;padding:10px;}#buttonSupported{-moz-box-shadow: 0px 1px 0px 0px #fff6af;    -webkit-box-shadow: 0px 1px 0px 0px #fff6af;    box-shadow: 0px 1px 0px 0px #fff6af;    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));    background:-moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);    background:-webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);    background:-o-linear-gradient(top, #ffec64 5%, #ffab23 100%);    background:-ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);    background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);    background-color:#ffec64;    -moz-border-radius:6px;    -webkit-border-radius:6px;    border-radius:6px;    border:1px solid #ffaa22;    display:inline-block;    cursor:pointer;    color:#333333;    font-family:Arial;    font-size:15px;    font-weight:bold;    padding:6px 24px;    text-decoration:none;    text-shadow:0px 1px 0px #ffee66;z-index:9999999999999999999;margin-top:10px;}";
- 
- var cssStyle = document.createElement("style");
- cssStyle.type = "text/css";
- cssStyle.id = className;
- cssStyle.appendChild(document.createTextNode(noImageCSS));
- document.documentElement.appendChild(cssStyle);
- 
- var divSupported = document.createElement("div");
- 
- divSupported.id = 'divSupported';
- var myDomain = window.location.href;
- //var myText = "Gutscheine verfügbar: " +myDomain;
- var myText = "Gutscheine verfügbar: ";
- divSupported.appendChild(document.createTextNode(myText));
- document.documentElement.appendChild(divSupported);
- 
- //divSupported.appendChild(document.createTextNode("Gutscheine verfügbar!"));
- var divSupportedButton = document.createElement("button");
- var robinsText ="Robins holen";
- divSupportedButton.id = 'buttonSupported';
- divSupportedButton.appendChild(document.createTextNode(robinsText));
- document.documentElement.appendChild(divSupportedButton);
- divSupported.appendChild(document.createElement("br"));
- divSupported.appendChild(divSupportedButton);
- */
 
 Object.defineProperty(window.__firefox__, "NoImageMode", {
                       enumerable: false,
@@ -42,7 +15,7 @@ Object.defineProperty(window.__firefox__, "NoImageMode", {
 const className = "__firefox__NoImageMode";
 
 function initializeStyleSheet () {
-    var noImageCSS = "*{background-image:none !important;}img,iframe{visibility:hidden !important;}body{background-color:#440000;} #divSupported{position:fixed;top:0px;width:100%;background-color:#000;color:#fff;text-align:center;size:25px;height:90px;z-index:9999999999;padding:10px;}#buttonSupported{-moz-box-shadow: 0px 1px 0px 0px #fff6af;    -webkit-box-shadow: 0px 1px 0px 0px #fff6af;    box-shadow: 0px 1px 0px 0px #fff6af;    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));    background:-moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);    background:-webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);    background:-o-linear-gradient(top, #ffec64 5%, #ffab23 100%);    background:-ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);    background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);    background-color:#ffec64;    -moz-border-radius:6px;    -webkit-border-radius:6px;    border-radius:6px;    border:1px solid #ffaa22;    display:inline-block;    cursor:pointer;    color:#333333;    font-family:Arial;    font-size:15px;    font-weight:bold;    padding:6px 24px;    text-decoration:none;    text-shadow:0px 1px 0px #ffee66;z-index:9999999999999999999;margin-top:10px;}";
+    var noImageCSS = "*{background-image:none !important;}img,iframe{visibility:hidden !important;}body{background-color:#440000;}";
     var newCss = document.getElementById(className);
     if (!newCss) {
         var cssStyle = document.createElement("style");
@@ -50,26 +23,6 @@ function initializeStyleSheet () {
         cssStyle.id = className;
         cssStyle.appendChild(document.createTextNode(noImageCSS));
         document.documentElement.appendChild(cssStyle);
-        
-        var divSupported = document.createElement("div");
-        
-        divSupported.id = 'divSupported';
-        var myDomain = window.location.href;
-        //var myText = "Gutscheine verfügbar: " +myDomain;
-        var myText = "Gutscheine verfügbar: ";
-        divSupported.appendChild(document.createTextNode(myText));
-        document.documentElement.appendChild(divSupported);
-        
-        //divSupported.appendChild(document.createTextNode("Gutscheine verfügbar!"));
-        var divSupportedButton = document.createElement("button");
-        var robinsText ="Robins holen";
-        divSupportedButton.id = 'buttonSupported';
-        divSupportedButton.appendChild(document.createTextNode(robinsText));
-        document.documentElement.appendChild(divSupportedButton);
-        divSupported.appendChild(document.createElement("br"));
-        divSupported.appendChild(divSupportedButton);
-        
-        
     } else {
         newCss.innerHTML = noImageCSS;
     }
